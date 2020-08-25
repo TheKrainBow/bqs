@@ -6,7 +6,7 @@
 /*   By: magostin <magostin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 20:13:32 by magostin          #+#    #+#             */
-/*   Updated: 2020/08/25 18:25:41 by magostin         ###   ########.fr       */
+/*   Updated: 2020/08/25 18:26:32 by magostin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ typedef struct		s_data
 	t_cell			**cells;
 }					t_data;
 
-int					ft_pars_map(int	fd, t_data *data);
+void				ft_pars_map(int	fd, t_data *data);
 void				ft_putstr(char *str);
 
 #endif
