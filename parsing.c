@@ -6,7 +6,7 @@
 /*   By: magostin <magostin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/25 16:35:56 by magostin          #+#    #+#             */
-/*   Updated: 2020/08/25 18:24:14 by magostin         ###   ########.fr       */
+/*   Updated: 2020/08/25 18:25:13 by magostin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int			ft_check_line(char *line, t_data *data)
 	return (1);
 }
 
-int			ft_pars_map(int	fd, t_data *data)
+void			ft_pars_map(int	fd, t_data *data)
 {
 	char	*line;
 	int		i;

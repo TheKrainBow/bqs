@@ -6,13 +6,16 @@
 /*   By: magostin <magostin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 20:13:32 by magostin          #+#    #+#             */
-/*   Updated: 2020/08/25 17:28:46 by magostin         ###   ########.fr       */
+/*   Updated: 2020/08/25 18:25:41 by magostin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BSQ_H
 # define BSQ_H
 
+# include <sys/types.h>
+# include <sys/stat.h>
+# include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
 # include "get_next_line.h"
