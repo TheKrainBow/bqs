@@ -6,7 +6,7 @@
 /*   By: magostin <magostin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 19:57:42 by magostin          #+#    #+#             */
-/*   Updated: 2020/08/25 17:39:35 by magostin         ###   ########.fr       */
+/*   Updated: 2020/08/25 18:28:04 by magostin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,7 +142,7 @@ int			main(int ac, char **av)
 	i = 0;
 	while (++i < ac)
 	{
-		fd = open(av[i], 'r');
+		fd = open(av[i], O_RDONLY);
 		ft_pars_map(fd, &data);
 		ft_bsq(&data);
 		//ft_print_map(&data);
