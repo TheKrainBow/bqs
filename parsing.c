@@ -6,7 +6,7 @@
 /*   By: magostin <magostin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/25 16:35:56 by magostin          #+#    #+#             */
-/*   Updated: 2020/08/25 18:25:13 by magostin         ###   ########.fr       */
+/*   Updated: 2020/08/25 18:29:07 by magostin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void			ft_pars_map(int	fd, t_data *data)
 	{
 		ret = get_next_line(fd, &data->map[i]);
 		data->line_size = data->line_size == -1 ? ft_strlen(data->map[i]) : data->line_size;
-		if (ft_strlen(data->map[i]) != data->line_size || ft_check_line(data->map[i], data))
+		if (ft_strlen(data->map[i]) != data->line_size || !ft_check_line(data->map[i], data))
 			ft_exit();
 	}
 	if (ret && get_next_line(fd, &line) != -1)
