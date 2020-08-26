@@ -6,7 +6,7 @@
 /*   By: magostin <magostin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 19:57:42 by magostin          #+#    #+#             */
-/*   Updated: 2020/08/25 18:28:04 by magostin         ###   ########.fr       */
+/*   Updated: 2020/08/26 16:12:53 by magostin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,11 +70,25 @@ void	ft_change_map(t_data *data)
 	}
 }
 
+int		test_big_square(int x, int y, t_data *data)
+{
+	int		i;
+
+
+	i = data->best_size;
+	while (i > 0 && data->cells[x + i][y + i].state == 0
+	&& i < data->cells[x + i][y + i].left
+	&& i < data->cells[x + i][y + i].up)
+		i--;
+	return (i == 0);
+}
+
 int		ft_bsq(t_data *data)
 {
 	int			x;
 	int			y;
 	int			i;
+	int			ret;
 
 	x = -1;
 	data->cells = malloc(sizeof(t_cell *) * (data->line_n));
@@ -90,15 +104,16 @@ int		ft_bsq(t_data *data)
 	data->best_x = 0;
 	data->best_y = 0;
 	x = -1;
-	while (++x < data->line_n - data->best_size)
+	while (++x < data->line_n - data->best_size - 1)
 	{
 		y = -1;
-		while (++y < data->line_size - data->best_size)
+		while (++y < data->line_size - data->best_size - 1)
 		{
 			if (data->cells[x][y].state == 0)
 			{
-				i = 0;
-				while (x + i < data->line_n && y + i < data->line_size
+				ret = test_big_square(x, y, data);
+				i = data->best_size + 1;
+				while (ret && x + i < data->line_n && y + i < data->line_size
 				&& data->cells[x + i][y + i].state == 0
 				&& i < data->cells[x + i][y + i].left
 				&& i < data->cells[x + i][y + i].up)
@@ -126,6 +141,20 @@ void		ft_print_map(t_data *data)
 		ft_putstr(data->map[i]);
 }
 
+void		ft_free_map(t_data *data)
+{
+	int		i;
+
+	i = -1;
+	while (++i < data->line_n)
+	{
+		free(data->map[i]);
+		free(data->cells[i]);
+	}
+	free(data->map);
+	free(data->cells);
+}
+
 int			main(int ac, char **av)
 {
 	int			i;
@@ -146,5 +175,6 @@ int			main(int ac, char **av)
 		ft_pars_map(fd, &data);
 		ft_bsq(&data);
 		//ft_print_map(&data);
+		ft_free_map(&data);
 	}
 }

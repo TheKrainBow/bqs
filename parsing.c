@@ -6,7 +6,7 @@
 /*   By: magostin <magostin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/25 16:35:56 by magostin          #+#    #+#             */
-/*   Updated: 2020/08/25 18:29:07 by magostin         ###   ########.fr       */
+/*   Updated: 2020/08/26 16:04:36 by magostin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void			ft_pars_map(int	fd, t_data *data)
 	data->fill = line[i + 2];
 	if (line[i + 3])
 		ft_exit();
-	//free(line);
+	free(line);
 	if (!(data->map = malloc(sizeof(char *) * (data->line_n + 1))))
 		ft_exit();
 	i = -1;
