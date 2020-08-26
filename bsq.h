@@ -6,7 +6,7 @@
 /*   By: magostin <magostin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 20:13:32 by magostin          #+#    #+#             */
-/*   Updated: 2020/08/25 18:26:32 by magostin         ###   ########.fr       */
+/*   Updated: 2020/08/26 16:40:55 by magostin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <fcntl.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <time.h>
 # include "get_next_line.h"
 
 typedef struct		s_cell

@@ -6,7 +6,7 @@
 /*   By: magostin <magostin@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/22 19:57:42 by magostin          #+#    #+#             */
-/*   Updated: 2020/08/26 16:12:53 by magostin         ###   ########.fr       */
+/*   Updated: 2020/08/26 16:41:41 by magostin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -160,6 +160,8 @@ int			main(int ac, char **av)
 	int			i;
 	int			fd;
 	t_data		data;
+	clock_t		start = clock();
+	clock_t		end;
 
 	if (ac == 1)
 	{
@@ -177,4 +179,6 @@ int			main(int ac, char **av)
 		//ft_print_map(&data);
 		ft_free_map(&data);
 	}
+	end = clock();
+	printf("%f\n", (double)(end - start) / CLOCKS_PER_SEC);
 }
